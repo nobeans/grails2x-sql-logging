@@ -114,4 +114,16 @@ log4j.main = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    // [L-1] SQLを出力する(プレイスホルダは「?」表記のまま)
+    debug 'org.hibernate.SQL'
+
+    // [L-2] SQLのプレイスホルダに対するパラメータを出力する(enum以外)
+    trace 'org.hibernate.type.descriptor.sql.BasicBinder'
+
+    // [L-3] SQLのプレイスホルダに対するパラメータを出力する(enum)
+    trace 'org.hibernate.type.EnumType'
+
+    // [L-4] HibernateではなくGroovy SQLを使っている場合も漏らさずロギングする
+    debug 'groovy.sql.Sql'
 }

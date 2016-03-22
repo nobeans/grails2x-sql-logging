@@ -12,6 +12,12 @@ hibernate {
     cache.region.factory_class = 'org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory' // Hibernate 4
     singleSession = true // configure OSIV singleSession mode
     flush.mode = 'manual' // OSIV session flush mode outside of transactional context
+
+    // [A-1] ロギング時にSQLをフォーマットして出力する
+    format_sql = true
+
+    // [A-2] SQL発行箇所の情報をSQLコメントとして出力する(気休め程度)
+    use_sql_comments = true
 }
 
 // environment specific settings
